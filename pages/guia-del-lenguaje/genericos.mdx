@@ -109,27 +109,25 @@ swapTwoValues(&algunString, &otroString)
 
 ## Tipos Parametros
 
-In the `swapTwoValues(_:_:)` example above, the placeholder type `T` is an example of a type parameter. Type parameters specify y name a placeholder type, y are written immediately after the function's name, between a pair of matching angle brackets (such as `<T>`).
+En el ejemplo `swapTwoValues(_:_:)` visto arriba, el tipo comodín `T` es un ejemplo de un tipo parametro. Tipos parametros especifican y dan nombre a un tipo comodín, y son escritos imediatamente después del nombre de la función, entre parentesis angulares (tal como `<T>`).
 
-Once you specify a type parameter, you can use it to define the type of a function's parameters (such as the `a` y `b` parameters of the `swapTwoValues(_:_:)` function), or as the function's return type, or as a type annotation within the body of the function. In each case, the type parameter is replaced with an _actual_ type whenever the function is called. (In the `swapTwoValues(_:_:)` example above, `T` was replaced with `Int` the first time the function was called, y was replaced with `String` the second time it was called.)
+Una vez creado el tipo parametro, puedes usarlo para definir el tipo de los parametros de una función (tal como el parametro `a` y `b` de la función `swapTwoValues(_:_:)`), o como el tipo que regresa la función, o como una anotación de tipo dentro del cuerpo de la función. En cada caso, el tipo parametro es reemplazado con el tipo real cuando la función es llamada. (En el ejemplo de `swapTwoValues(_:_:)` descrito arriba, `T` es reemplazado con `Int` la primera vez que la función es llamada, y con `String` la segunda vez.)
 
-You can provide more than one type parameter by writing multiple type parameter names within the angle brackets, separated by commas.
+Puedes crear mas de un tipo parametro escribiendo multiples tipos parametros dentro de los parentesis angulares, separados por comas. 
 
-## Naming Type Parameters
+## Nombrando Tipos Parametros
 
-In most cases, type parameters have descriptive names, such as `Key` y `Value` in `Dictionary<Key, Value>` y `Element` in `Array<Element>`, which tells the reader about the relationship between the type parameter y the generic type or function it's used in. However, when there isn't a meaningful relationship between them, it's traditional to name them using single letters such as `T`, `U`, y `V`, such as `T` in the `swapTwoValues(_:_:)` function above.
+En la mayoría de los casos, los tipos parametros tiene nomnbres descriptivos, tal como `Key` y `Value` en `Dictionary<Key, Value>` y `Element` en `Array<Element>`, los cuales expresan al lector sobre la relación entre el tipo parametro y el tipo genérico o función que es usada. Sin embargo, cuando no hay una relación significativa entre ellos, es costumbre nombrarlos usando solo una letra tal como `T`, `U` y `V`, tal como `T` en la función `swapTwoValues(_:_:)` descrita anteriormente.
 
 <Callout>
-  Always give type parameters upper camel case names (such as `T` y
-  `MyTypeParameter`) to indicate that they're a placeholder for a _type_, not a
-  value.
+  Siempre usa nomeclatura de camello para los tipos parametros (por ejemplo `T` y `MyTypeParameter`) para indicar que son comodines de un _tipo_, y no un valor.
 </Callout>
 
-## Generic Types
+## Tipos Genéricos
 
-In addition to generic functions, Swift enables you to define your own _generic types_. These are custom classes, structures, y enumerations that can work with _any_ type, in a similar way to `Array` y `Dictionary`.
+En adición a las funciones genéricas, Swift te permite definir tus propios _tipos genéricos_. Estos son clases, estructuras, y enumeradores personalizados que pueden usarse con _cualquier_ tipo, de manera similar a `Array` y `Dictionary`.
 
-This section shows you how to write a generic collection type called `Stack`. A stack is an ordered set of values, similar to an array, but with a more restricted set of operations than Swift's `Array` type. An array allows new items to be inserted y removed at any location in the array. A stack, however, allows new items to be appended only to the end of the collection (known as _pushing_ a new value on to the stack). Similarly, a stack allows items to be removed only from the end of the collection (known as _popping_ a value off the stack).
+Esta sección muestra como escribir una colección de tipo genérica llamada `Stack`. Una pila (o stack en ingles) es un conjunto ordenado de valores, similar a un array, pero con un conjunto de operaciones mas restringida que los tipo `Array` de Swift. En un array se permite insertar o remover en cualquier parte del array. Una pila, sin embargo, solo permite que nuevos elementos sean insertados al final de la colección (conocido como _empujar_ un nuevo valor en la pila). De manera similar, una pila permite que los elementos sean removidos solo al final de la colección (conocido como _sacar_ un valor de la pila).
 
 <Callout>
   The concept of a stack is used by the `UINavigationController` class to model
