@@ -130,32 +130,28 @@ En adición a las funciones genéricas, Swift te permite definir tus propios _ti
 Esta sección muestra como escribir una colección de tipo genérica llamada `Stack`. Una pila (o stack en ingles) es un conjunto ordenado de valores, similar a un array, pero con un conjunto de operaciones mas restringida que los tipo `Array` de Swift. En un array se permite insertar o remover en cualquier parte del array. Una pila, sin embargo, solo permite que nuevos elementos sean insertados al final de la colección (conocido como _empujar_ un nuevo valor en la pila). De manera similar, una pila permite que los elementos sean removidos solo al final de la colección (conocido como _sacar_ un valor de la pila).
 
 <Callout>
-  The concept of a stack is used by the `UINavigationController` class to model
-  the view controllers in its navigation hierarchy. You call the
-  `UINavigationController` class `pushViewController(_:animated:)` method to add
-  (or push) a view controller on to the navigation stack, y its
-  `popViewControllerAnimated(_:)` method to remove (or pop) a view controller
-  from the navigation stack. A stack is a useful collection model whenever you
-  need a strict “last in, first out” approach to managing a collection.
+  El concepto de pila es usado por la clase `UINavigationController` para modelar los view controllers en herarquia de navegación.
+  Se llama al método `pushViewController(_:animated:)` de la clase `UINavigationController` para agregar (o empujar) un view controller en la pila ne navegación, y al método `popViewControllerAnimated(_:)`
+  para remover (o sacar) un view controller de la pila de navegación. Una pila es muy util para modelar un comportamiento de "el ultimo en llegar, el primero en salir" para manejar una colección.
 </Callout>
 
-The illustration below shows the push y pop behavior for a stack:
+La ilustración abajo muestra el comportamiento de empujar y sacar de una pila:
 
 <img
   src="/assets/images/stackPushPop_2x.png"
-  alt="Illustration of push y pop behavior on a stack"
+  alt="Ilustración del comportamiento de empujar y sacar de una pila"
   width={664}
   height={273}
   className="figure-small"
 />
 
-1. There are currently three values on the stack.
-2. A fourth value is pushed onto the top of the stack.
-3. The stack now holds four values, with the most recent one at the top.
-4. The top item in the stack is popped.
-5. After popping a value, the stack once again holds three values.
+1. En este momento hay tres valores en la pila.
+2. Un cuarto valor es empujado en lo alto de la pila.
+3. La pila ahora contiene cuatro valores, contando el nuevo valor añadido.
+4. El valor en lo alto es sacado de la pila.
+5. Después de sacar el valor, nuevamente la pila contiene tres valores.
 
-Here's how to write a nongeneric version of a stack, in this case for a stack of `Int` values:
+De esta forma es como se escribiría una version no genérica de la pila en este caso una pila de valores `Int`:
 
 <CodeSnippet>
   {`struct IntStack {
