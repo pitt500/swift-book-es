@@ -165,11 +165,11 @@ De esta forma es como se escribiría una version no genérica de la pila en este
 }`}
 </CodeSnippet>
 
-This structure uses an `Array` property called `items` to store the values in the stack. Stack provides two methods, `push` y `pop`, to push y pop values on y off the stack. These methods are marked as `mutating`, because they need to modify (or _mutate_) the structure's items array.
+Esta estructura usa una propiedad `Array` llamada `items` para guardar los valores en la pila. La pila provee dos methodos, `push` y `pop`, para empujar y sacar valores dentro y fuera de la pila. Estos métodos estan marcados como `mutating`, porque necesitan modificar (o _mutar_) los elementos de la estructura array.
 
-The `IntStack` type shown above can only be used with `Int` values, however. It would be much more useful to define a generic `Stack` class, that can manage a stack of _any_ type of value.
+El tipo `IntStack` mostrado anteriormente solo puede ser usado con valores  `Int`. Sería mucho mas útil definir una clase `Stack` (pila) genérica, que pueda manejar valores de _cualquier_ tipo.
 
-Here's a generic version of the same code:
+Esta es una versión genérica del mismo código:
 
 <CodeSnippet>
   {`struct Stack<Element> {
