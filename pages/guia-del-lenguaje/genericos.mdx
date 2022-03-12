@@ -183,17 +183,17 @@ Esta es una versión genérica del mismo código:
 }`}
 </CodeSnippet>
 
-Note how the generic version of `Stack` is essentially the same as the nongeneric version, but with a type parameter called `Element` instead of an actual type of `Int`. This type parameter is written within a pair of angle brackets (`<Element>`) immediately after the structure's name.
+Nota como la versión genérica de `Stack` es esencialmente la misma que la no genérica, pero con un tipo parametro llamado `Element` en lugar del tipo `Int`. Este tipo parametro está escrito dentro de parentesis angulares (`<Element>`) inmendiatamente después del nombre de la estructura.
 
-`Element` defines a placeholder name for a type to be provided later. This future type can be referred to as `Element` anywhere within the structure's definition. In this case, `Element` is used as a placeholder in three places:
+`Element` define un nombre comodín para un tipo que será proporcionado más adelante. Este futuro tipo puede ser referenciado como `Element` en cualquier lugar dentro de la definición de la estructura. En este caso, `Element` es usado como un comodín en tres lugares:
 
-- To create a property called `items`, which is initialized with an empty array of values of type `Element`
-- To specify that the `push(_:)` method has a single parameter called `item`, which must be of type `Element`
-- To specify that the value returned by the `pop()` method will be a value of type `Element`
+- Para crear una propiedad llamada `items`, la cual es inicializada con un array vacío de valores de tipo `Element`
+- Para especificar que el método `push(_:)` tiene un solo parametro llamado `item`, el cual es de tipo `Element`
+- Para especificar que el valor regresado por el método `pop()` será un valor de tipo `Element`
 
-Because it's a generic type, Stack can be used to create a stack of _any_ valid type in Swift, in a similar manner to `Array` y `Dictionary`.
+Debido a que es un tipo genérico, Stack puede ser usado para crear una pila de _cualquier_ tipo valido en Swift, de manera similar a `Array` y `Dictionary`.
 
-You create a new `Stack` instance by writing the type to be stored in the stack within angle brackets. For example, to create a new stack of strings, you write `Stack<String>()`:
+Puedes crear una nueva instancia de `Stack` escribiendo el tipo a ser guardado en la pila dentro de parentesis angulares. Por ejemplo, para crear una nueva pila de strings, escribes `Stack<String>()`:
 
 <CodeSnippet>
   {`var stackOfStrings = Stack<String>()
@@ -201,10 +201,10 @@ stackOfStrings.push("uno")
 stackOfStrings.push("dos")
 stackOfStrings.push("tres")
 stackOfStrings.push("cuatro")
-// the stack now contains 4 strings`}
+// La pila ahora contiene 4 strings`}
 </CodeSnippet>
 
-Here's how `stackOfStrings` looks after pushing these four values on to the stack:
+Así es como `stackOfStrings` luce despues de empujar estos cuatro valores en la pila:
 
 <img
   src="/assets/images/stackPushedFourStrings_2x.png"
@@ -214,14 +214,14 @@ Here's how `stackOfStrings` looks after pushing these four values on to the stac
   className="figure-small"
 />
 
-Popping a value from the stack removes y returns the top value, `"cuatro"`:
+Sacar un valor de la pila remueve y regresa el valor de más arriba, `"cuatro"`:
 
 <CodeSnippet>
   {`let fromTheTop = stackOfStrings.pop()
-// fromTheTop is equal to "cuatro", y the stack now contains 3 strings`}
+// fromTheTop es igual a "cuatro", y la pila ahora contiene 3 strings`}
 </CodeSnippet>
 
-Here's how the stack looks after popping its top value:
+Así es como luce la pila despues de haber sacado su valor de más arriba:
 
 <img
   src="/assets/images/stackPoppedOneString_2x.png"
