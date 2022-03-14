@@ -270,17 +270,17 @@ Este requerimiento se cumple por una restricción de tipo en el tipo de la llave
 
 Puedes definir tus propias restricciones de tipo cuando creas tipos genéricos, y estas restricciones proporcionan gran parde del poder de la programación genérica. Conceptos abstractos como `Hashable` caracterizan tipos en términos de sus características conceptuales, en lugar de su tipo concreto. 
 
-### Type Constraint Syntax
+### Sintaxis En Restricciones De Tipo
 
-You write type constraints by placing a single class or protocol constraint after a type parameter's name, separated by a colon, as part of the type parameter list. The basic syntax for type constraints on a generic function is shown below (although the syntax is the same for generic types):
+Las restricciones de tipo se escriben colocando una sola clase o restricción de protocolo después del nombre de un tipo parametro, separado por dos puntos, como parte de la lista de tipos parametros. La sintaxis basica para restricciones de tipo en una función genérica se muestra abajo (aunque la sintaxis es la misma para los tipos genéricos):
 
 <CodeSnippet>
-  {`func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
-    // function body goes here
+  {`func algunaFuncion<T: AlgunaClase, U: AlgunProtocolo>(algunT: T, algunU: U) {
+    // el cuerpo de la función va aquí
 }`}
 </CodeSnippet>
 
-The hypothetical function above has two type parameters. The first type parameter, `T`, has a type constraint that requires `T` to be a subclass of `SomeClass`. The second type parameter, `U`, has a type constraint that requires `U` to conform to the protocol `SomeProtocol`.
+La función hipotética de arriba tiene dos tipos parametros. El primer tipo parametro, `T`, tiene una restricción que requiere que `T` sea una subclase de `AlgunaClase`. El segundo tipo parametro, `U`, tiene una restricción que requiere que `U` conforme al protocolo `AlgunProtocolo`.
 
 ### Type Constraints in Action
 
